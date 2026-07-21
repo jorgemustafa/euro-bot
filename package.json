@@ -1,0 +1,27 @@
+{
+  "name": "euroville-booking-bot",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "appium": "appium",
+    "book": "tsx src/book.ts",
+    "adb:devices": "adb devices -l",
+    "doctor:android": "appium driver doctor uiautomator2",
+    "ui:dump": "adb shell uiautomator dump /sdcard/euroville-window.xml && adb pull /sdcard/euroville-window.xml outputs/euroville-window.xml",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "dotenv": "^16.6.1",
+    "tsx": "^4.20.3",
+    "webdriverio": "^9.16.2",
+    "zod": "^3.25.67"
+  },
+  "devDependencies": {
+    "appium": "^2.19.0",
+    "appium-uiautomator2-driver": "^4.2.9",
+    "typescript": "^5.8.3",
+    "vitest": "^3.2.4"
+  }
+}
