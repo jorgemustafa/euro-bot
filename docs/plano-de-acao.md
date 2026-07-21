@@ -41,7 +41,7 @@ Reservar quadras no app Euroville com:
   - Smart Lock/local confiável;
   - emulador Android dedicado;
   - fallback: notificar falha via WhatsApp quando device estiver bloqueado/offline.
-- Não armazenar senha/PIN do celular no projeto.
+- Se PIN for necessário, manter apenas em `.env` local ignorado pelo Git.
 
 ### 5. WhatsApp + LLM
 
