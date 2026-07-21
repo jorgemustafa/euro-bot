@@ -12,6 +12,20 @@ export async function isTextVisible(driver: Browser, text: string) {
   return element.isDisplayed().catch(() => false);
 }
 
+export async function isTextOrDescriptionVisible(driver: Browser, text: string) {
+  if (await isTextVisible(driver, text)) return true;
+
+  const element = await driver.$(`android=new UiSelector().descriptionContains("${text}")`);
+  return element.isDisplayed().catch(() => false);
+}
+
+export async function waitForTextOrDescription(driver: Browser, text: string, timeout = 10_000) {
+  await driver.waitUntil(async () => (await driver.getPageSource()).includes(text), {
+    timeout,
+    timeoutMsg: `Texto não apareceu na tela: ${text}`,
+  });
+}
+
 export async function tapByDescription(driver: Browser, text: string) {
   const element = await driver.$(`android=new UiSelector().descriptionContains("${text}")`);
   await element.waitForDisplayed({ timeout: 10_000 });

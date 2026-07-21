@@ -1,4 +1,5 @@
 import { config } from './config.js';
+import { wakeDevice } from './adb.js';
 import { createDriver } from './appium/createDriver.js';
 import {
   isTextVisible,
@@ -11,6 +12,7 @@ import {
 import { findSlot, tapReserveForVisibleTime, waitUntilSlotBooked } from './appium/readSlots.js';
 
 async function main() {
+  await wakeDevice();
   const driver = await createDriver();
 
   try {
