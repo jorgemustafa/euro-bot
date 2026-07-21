@@ -18,6 +18,12 @@ Ele faz:
 
 ## Criar tarefa 00:01
 
+Via script:
+
+```powershell
+npm run daily:install-task
+```
+
 No Agendador de Tarefas:
 
 - Trigger: diariamente `00:01`;
