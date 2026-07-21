@@ -41,8 +41,10 @@ C:\Users\Jorge Fernando\Projects\euro-bot
 - App autenticado no celular.
 - ADB Wi‑Fi ativo e `ANDROID_UDID` correto.
 - Celular ligado, na mesma rede, acessível via ADB.
-- Use Smart Lock/local confiável ou deixe o aparelho sem bloqueio forte durante a janela 00:01.
+- Smart Lock/local confiável ativo ou aparelho sem bloqueio forte durante a janela 00:01.
 - O projeto não armazena PIN/senha de tela.
+
+Smart Lock já foi validado com `npm run daily:win`.
 
 ## Debug
 
