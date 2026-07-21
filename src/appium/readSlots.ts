@@ -46,7 +46,7 @@ export async function tapReserveForVisibleTime(driver: Browser, time: string) {
   const index = slots.findIndex((slot) => slot.time === time);
   if (index === -1) throw new Error(`Horário não visível: ${time}`);
 
-  const buttons = await driver.$$(`//android.widget.Button[@text="RESERVAR"]`);
+  const buttons = await driver.$$(`//android.widget.Button[@content-desc="RESERVAR"]`);
   const button = buttons[index];
   if (!button) throw new Error(`Botão RESERVAR não encontrado para ${time}`);
 

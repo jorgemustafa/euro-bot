@@ -11,7 +11,10 @@ const envSchema = z.object({
   BOOKING_COURTS: z.string().default('Quadra 1'),
   BOOKING_TIMES: z.string().default('19:00'),
   BOOKING_DAY_OFFSET: z.coerce.number().default(1),
-  DRY_RUN: z.coerce.boolean().default(true),
+  DRY_RUN: z
+    .enum(['true', 'false'])
+    .default('true')
+    .transform((value) => value === 'true'),
 });
 
 const env = envSchema.parse(process.env);
