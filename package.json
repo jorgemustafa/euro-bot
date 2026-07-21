@@ -7,6 +7,7 @@
     "appium": "appium",
     "book": "tsx src/book.ts",
     "bookings:sync": "tsx src/syncBookings.ts",
+    "reminders:check": "tsx src/checkReminders.ts",
     "adb:devices": "adb devices -l",
     "doctor:android": "appium driver doctor uiautomator2",
     "ui:dump": "adb shell uiautomator dump /sdcard/euroville-window.xml && adb pull /sdcard/euroville-window.xml outputs/euroville-window.xml",

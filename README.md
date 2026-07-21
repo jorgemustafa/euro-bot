@@ -8,7 +8,9 @@ Bot local para reservar quadras no app Android Euroville via Appium + ADB.
 - Fluxo validado em `DRY_RUN=true`: encontrou slot disponível sem reservar.
 - ADB Wi‑Fi validado sem cabo USB.
 - Reserva real validada.
-- Próximo foco: automação 00:01, leitura de reservas registradas e WhatsApp/LLM.
+- Leitura de reservas registradas validada.
+- Lembretes locais 1h antes preparados.
+- Próximo foco: automação 00:01 e WhatsApp/LLM.
 
 ## Como roda
 
@@ -52,10 +54,23 @@ Terminal 2:
 npm run book
 ```
 
+Reservas registradas:
+
+```bash
+npm run bookings:sync
+```
+
+Lembretes locais:
+
+```bash
+npm run reminders:check
+```
+
 Por segurança, mantenha:
 
 ```env
 DRY_RUN=true
+REMINDERS_MARK_SENT=false
 ```
 
 ## ADB Wi-Fi
