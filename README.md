@@ -66,6 +66,12 @@ Lembretes locais:
 npm run reminders:check
 ```
 
+Rotina diária Windows:
+
+```bash
+npm run daily:win
+```
+
 Por segurança, mantenha:
 
 ```env
