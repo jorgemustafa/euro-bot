@@ -12,7 +12,7 @@ export type Booking = {
 const dbPath = 'data/bookings.json';
 const dateRegex = /(\d{2}\/\d{2}\/\d{4})/;
 const timeRegex = /(\d{2}:\d{2})\s+às\s+(\d{2}:\d{2})/;
-const statuses = ['APROVADA', 'RESERVADO', 'CONFIRMADO', 'PENDENTE'];
+const statuses = ['APROVADA', 'CANCELADA', 'RESERVADO', 'CONFIRMADO', 'PENDENTE'];
 
 export function parseBookingsFromSource(source: string, courts: string[]) {
   const items = [...source.matchAll(/(?:text|content-desc)="([^"]*)"/g)].map((match) => decodeXml(match[1]));

@@ -16,6 +16,12 @@ describe('parseBookingsFromSource', () => {
       },
     ]);
   });
+
+  it('parses canceled bookings from accessibility text', () => {
+    const source = '<node content-desc="CANCELADA&#10;CAMPO SOCIETY&#10;Dia 22/07/2026 - 17:00 às 18:00" />';
+
+    expect(parseBookingsFromSource(source, ['CAMPO SOCIETY'])[0]?.status).toBe('CANCELADA');
+  });
 });
 
 describe('mergeBookings', () => {
