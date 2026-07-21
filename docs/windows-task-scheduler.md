@@ -35,10 +35,8 @@ C:\Users\Jorge Fernando\Projects\euro-bot
 - App autenticado no celular.
 - ADB Wi‑Fi ativo e `ANDROID_UDID` correto.
 - Celular ligado, na mesma rede, acessível via ADB.
-- Se a tela bloqueada impedir o fluxo, configure `ANDROID_UNLOCK_PIN` apenas no `.env` local.
-- Unlock via ADB é best-effort. Alguns Android/Samsung bloqueiam input remoto na lockscreen segura.
-- Se continuar bloqueado, use Smart Lock/local confiável ou deixe o aparelho sem bloqueio forte durante a janela 00:01.
-- Nunca commitar senha/PIN real.
+- Use Smart Lock/local confiável ou deixe o aparelho sem bloqueio forte durante a janela 00:01.
+- O projeto não armazena PIN/senha de tela.
 
 ## Debug
 

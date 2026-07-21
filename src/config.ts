@@ -4,7 +4,6 @@ import { z } from 'zod';
 const envSchema = z.object({
   ANDROID_DEVICE_NAME: z.string().default('Android'),
   ANDROID_UDID: z.string().optional(),
-  ANDROID_UNLOCK_PIN: z.string().optional(),
   APPIUM_HOST: z.string().default('127.0.0.1'),
   APPIUM_PORT: z.coerce.number().default(4723),
   APP_PACKAGE: z.string().default('net.dzigne.sigmaapp.euroville'),
@@ -26,7 +25,6 @@ export const config = {
     port: env.APPIUM_PORT,
     deviceName: env.ANDROID_DEVICE_NAME,
     udid: env.ANDROID_UDID || undefined,
-    unlockPin: env.ANDROID_UNLOCK_PIN || undefined,
     appPackage: env.APP_PACKAGE,
     appActivity: env.APP_ACTIVITY || undefined,
   },
