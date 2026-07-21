@@ -8,7 +8,7 @@ import {
   tapByTextOrDescription,
   tapLastButton,
 } from './appium/actions.js';
-import { findSlot, tapReserveForVisibleTime } from './appium/readSlots.js';
+import { findSlot, tapReserveForVisibleTime, waitUntilSlotBooked } from './appium/readSlots.js';
 
 async function main() {
   const driver = await createDriver();
@@ -40,7 +40,8 @@ async function main() {
       }
 
       await tapReserveForVisibleTime(driver, slot.time);
-      console.log(`Reserva solicitada: ${slot.court} ${slot.time}`);
+      const bookedSlot = await waitUntilSlotBooked(driver, slot.court, slot.time);
+      console.log(`Reserva confirmada na tela: ${bookedSlot.court} ${bookedSlot.time} (${bookedSlot.status})`);
       return;
     }
 

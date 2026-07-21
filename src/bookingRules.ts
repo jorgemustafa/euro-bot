@@ -2,6 +2,7 @@ export type Slot = {
   court: string;
   time: string;
   available: boolean;
+  status?: string;
 };
 
 export type BookingPreferences = {

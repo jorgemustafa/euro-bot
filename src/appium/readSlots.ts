@@ -13,11 +13,13 @@ export async function readVisibleSlots(driver: Browser, court: string): Promise<
   return items.flatMap((item) => {
     const time = item.match(slotRegex)?.[1];
     if (!time) return [];
+    const status = readStatus(item);
 
     return {
       court,
       time,
-      available: item.includes('DISPONÍVEL'),
+      available: status === 'DISPONÍVEL',
+      status,
     };
   });
 }
@@ -57,6 +59,17 @@ export async function tapReserveForVisibleTime(driver: Browser, time: string) {
   await button.click();
 }
 
+export async function waitUntilSlotBooked(driver: Browser, court: string, time: string) {
+  for (let i = 0; i < 5; i += 1) {
+    await driver.pause(1_000);
+    const slot = (await readVisibleSlots(driver, court)).find((item) => item.time === time);
+
+    if (slot && !slot.available) return slot;
+  }
+
+  throw new Error(`Reserva não confirmada na tela para ${court} ${time}`);
+}
+
 function decodeXml(value: string) {
   return value
     .replaceAll('&quot;', '"')
@@ -64,4 +77,8 @@ function decodeXml(value: string) {
     .replaceAll('&lt;', '<')
     .replaceAll('&gt;', '>')
     .replaceAll('&amp;', '&');
+}
+
+function readStatus(value: string) {
+  return ['DISPONÍVEL', 'RESERVADO', 'INDISPONÍVEL', 'ENCERRADO'].find((status) => value.includes(status));
 }
