@@ -12,7 +12,7 @@ Reservar quadras no app Euroville com:
 
 ### 1. Estabilizar reserva real
 
-- Mapear tela pós-`RESERVAR`.
+- Ler tela "Reservas" uma tela atrás, onde ficam reservas registradas.
 - Confirmar reserva só após flag explícita.
 - Registrar sucesso/falha com screenshot e log.
 - Manter `DRY_RUN=true` como padrão.
@@ -38,6 +38,15 @@ Reservar quadras no app Euroville com:
 - Converter texto livre em JSON validado.
 - Confirmar antes de reservar quando houver ambiguidade.
 - Responder confirmação, falha e horários próximos.
+- Enviar lembrete 1h antes para reservas registradas.
+
+### 5. Lembretes
+
+- Ler reservas existentes na tela `Reservas`.
+- Persistir reservas em arquivo local simples.
+- Agendar lembrete 1h antes.
+- Enviar WhatsApp: quadra, data, horário.
+- Evitar lembrete duplicado com `reminderSentAt`.
 
 ## Regra de arquitetura
 
@@ -45,7 +54,8 @@ WhatsApp, cron e CLI devem chamar mesma engine:
 
 ```ts
 book({ court, date, times, dryRun })
+listBookings()
+sendReminder(booking)
 ```
 
 LLM nunca clica no app. LLM só interpreta intenção.
-

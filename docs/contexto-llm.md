@@ -30,6 +30,8 @@ Comportamento esperado:
 - Consultar disponibilidade no app.
 - Reservar somente quando autorizado.
 - Informar alternativas próximas se horário indisponível.
+- Ler reservas já registradas.
+- Enviar lembrete 1h antes via WhatsApp.
 
 Formato interno recomendado:
 
@@ -42,10 +44,23 @@ Formato interno recomendado:
 }
 ```
 
+Reserva registrada:
+
+```json
+{
+  "court": "CAMPO SOCIETY",
+  "date": "2026-07-22",
+  "startTime": "17:00",
+  "endTime": "18:00",
+  "status": "RESERVADO",
+  "reminderSentAt": null
+}
+```
+
 Regras:
 
 - Não inventar quadras.
 - Não reservar em caso ambíguo.
 - Confirmar antes de ação irreversível.
 - Preferir horários conforme `.env`.
-
+- Não enviar lembrete duplicado.

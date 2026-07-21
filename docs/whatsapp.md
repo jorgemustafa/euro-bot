@@ -26,13 +26,19 @@ Se indisponível:
 17:00 indisponível. Próximos disponíveis: 16:00, 18:00.
 ```
 
+Lembrete:
+
+```txt
+Lembrete: sua reserva CAMPO SOCIETY começa em 1h, hoje às 17:00.
+```
+
 Notas:
 
 - Evitar automação de WhatsApp Web.
 - Webhook precisa HTTPS público.
 - Mensagens fora janela de 24h podem exigir template aprovado.
+- Para lembrete ativo, usar template aprovado se estiver fora da janela de atendimento.
 
 Referência:
 
 - https://developers.facebook.com/docs/whatsapp/cloud-api/overview
-

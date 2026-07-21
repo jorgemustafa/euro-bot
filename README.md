@@ -6,7 +6,9 @@ Bot local para reservar quadras no app Android Euroville via Appium + ADB.
 
 - App real controlado com celular Android físico.
 - Fluxo validado em `DRY_RUN=true`: encontrou slot disponível sem reservar.
-- Próximo foco: ADB Wi‑Fi, confirmação final segura e WhatsApp/LLM.
+- ADB Wi‑Fi validado sem cabo USB.
+- Reserva real validada.
+- Próximo foco: automação 00:01, leitura de reservas registradas e WhatsApp/LLM.
 
 ## Como roda
 
@@ -70,4 +72,3 @@ ANDROID_UDID=192.168.0.50:5555
 - [ADB](https://developer.android.com/tools/adb)
 - [Android wireless debugging](https://developer.android.com/studio/run/device#wireless)
 - [WebdriverIO](https://webdriver.io/docs/api)
-
