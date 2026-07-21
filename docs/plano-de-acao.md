@@ -31,7 +31,19 @@ Reservar quadras no app Euroville com:
 - Validar device conectado.
 - Agendar no Windows Task Scheduler.
 
-### 4. WhatsApp + LLM
+### 4. Lidar com tela bloqueada
+
+- Detectar se device está disponível antes da reserva.
+- Acordar tela via ADB quando possível.
+- Evitar depender do celular estar desbloqueado manualmente.
+- Avaliar opções:
+  - Android sem bloqueio forte durante janela de agendamento;
+  - Smart Lock/local confiável;
+  - emulador Android dedicado;
+  - fallback: notificar falha via WhatsApp quando device estiver bloqueado/offline.
+- Não armazenar senha/PIN do celular no projeto.
+
+### 5. WhatsApp + LLM
 
 - Usar WhatsApp Business Cloud API.
 - Receber mensagens por webhook HTTPS.
@@ -40,7 +52,7 @@ Reservar quadras no app Euroville com:
 - Responder confirmação, falha e horários próximos.
 - Enviar lembrete 1h antes para reservas registradas.
 
-### 5. Lembretes
+### 6. Lembretes
 
 - Ler reservas existentes na tela `Reservas`.
 - Persistir reservas em arquivo local simples.
