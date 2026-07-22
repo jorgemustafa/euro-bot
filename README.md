@@ -87,6 +87,12 @@ Depois de parear/conectar o celular via Wi‑Fi, preencha:
 ANDROID_UDID=192.168.0.50:5555
 ```
 
+## Docs
+
+- [Arquitetura](docs/arquitetura.md)
+- [Plano de ação](docs/plano-de-acao.md)
+- [Task Scheduler](docs/windows-task-scheduler.md)
+
 ## Referências
 
 - [Appium UiAutomator2](https://appium.io/docs/en/3.3/quickstart/uiauto2-driver/)

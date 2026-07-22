@@ -5,7 +5,6 @@ import {
   isTextVisible,
   saveScreenshot,
   tapByDescription,
-  tapByText,
   tapByTextOrDescription,
   tapLastButton,
 } from './appium/actions.js';

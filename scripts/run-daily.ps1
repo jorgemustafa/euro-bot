@@ -6,6 +6,13 @@ $ErrorActionPreference = "Stop"
 Set-StrictMode -Version Latest
 Set-Location $RepoRoot
 
+$logDir = Join-Path $RepoRoot "logs"
+New-Item -ItemType Directory -Force -Path $logDir | Out-Null
+$logFile = Join-Path $logDir ("daily-" + (Get-Date -Format "yyyyMMdd-HHmmss") + ".log")
+Start-Transcript -Path $logFile | Out-Null
+
+try {
+
 function Read-DotEnv {
   $envFile = Join-Path $RepoRoot ".env"
   if (!(Test-Path $envFile)) { return @{} }
@@ -79,3 +86,7 @@ Invoke-Logged "adb devices" {
 Invoke-Logged "book" { Invoke-Npm "book" }
 Invoke-Logged "bookings sync" { Invoke-Npm "bookings:sync" }
 Invoke-Logged "reminders check" { Invoke-Npm "reminders:check" }
+} finally {
+  Stop-Transcript | Out-Null
+  Write-Host "Log: $logFile"
+}

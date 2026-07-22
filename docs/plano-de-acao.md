@@ -10,28 +10,28 @@ Reservar quadras no app Euroville com:
 
 ## Fases
 
-### 1. Estabilizar reserva real
+### 1. Estabilizar reserva real - DONE
 
 - Ler tela "Reservas" uma tela atrás, onde ficam reservas registradas.
 - Confirmar reserva só após flag explícita.
 - Registrar sucesso/falha com screenshot e log.
 - Manter `DRY_RUN=true` como padrão.
 
-### 2. Remover cabo USB
+### 2. Remover cabo USB - DONE
 
 - Ativar depuração sem fio no Android.
 - Parear PC e celular.
 - Configurar `ANDROID_UDID=ip:porta`.
 - Validar `npm run book` sem USB.
 
-### 3. Automatizar 00:01
+### 3. Automatizar 00:01 - DONE
 
 - Criar script PowerShell robusto.
 - Subir Appium se necessário.
 - Validar device conectado.
 - Agendar no Windows Task Scheduler.
 
-### 4. Lidar com tela bloqueada
+### 4. Lidar com tela bloqueada - DONE
 
 - Detectar se device está disponível antes da reserva.
 - Acordar tela via ADB quando possível.
