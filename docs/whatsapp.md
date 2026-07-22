@@ -39,6 +39,27 @@ Notas:
 - Mensagens fora janela de 24h podem exigir template aprovado.
 - Para lembrete ativo, usar template aprovado se estiver fora da janela de atendimento.
 
+## Estado atual
+
+Já existe base local para:
+
+- interpretar mensagens simples como `reservar quadra areia 1 as 17h`;
+- enviar texto via WhatsApp Cloud API quando `.env` estiver configurado;
+- usar WhatsApp no `npm run reminders:check`.
+
+`.env`:
+
+```env
+WHATSAPP_GRAPH_VERSION=v20.0
+WHATSAPP_TOKEN=
+WHATSAPP_PHONE_NUMBER_ID=
+WHATSAPP_TO=
+```
+
+Sem essas variáveis, lembretes continuam em modo `[DRY_RUN]`.
+
+O webhook de entrada ainda não foi implementado.
+
 Referência:
 
 - https://developers.facebook.com/docs/whatsapp/cloud-api/overview

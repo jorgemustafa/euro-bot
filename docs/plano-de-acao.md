@@ -43,21 +43,21 @@ Reservar quadras no app Euroville com:
   - fallback: notificar falha via WhatsApp quando device estiver bloqueado/offline.
 - Não armazenar PIN/senha de tela no projeto.
 
-### 5. WhatsApp + LLM
+### 5. WhatsApp + LLM - EM ANDAMENTO
 
 - Usar WhatsApp Business Cloud API.
 - Receber mensagens por webhook HTTPS.
-- Converter texto livre em JSON validado.
+- Converter texto livre em JSON validado. `parseBookingMessage` cobre MVP sem LLM.
 - Confirmar antes de reservar quando houver ambiguidade.
 - Responder confirmação, falha e horários próximos.
 - Enviar lembrete 1h antes para reservas registradas.
 
-### 6. Lembretes
+### 6. Lembretes - EM ANDAMENTO
 
 - Ler reservas existentes na tela `Reservas`.
 - Persistir reservas em arquivo local simples.
 - Agendar lembrete 1h antes.
-- Enviar WhatsApp: quadra, data, horário.
+- Enviar WhatsApp: quadra, data, horário. Base Cloud API adicionada; falta credencial real.
 - Evitar lembrete duplicado com `reminderSentAt`.
 
 ## Regra de arquitetura
