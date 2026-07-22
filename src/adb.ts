@@ -12,6 +12,7 @@ export async function wakeDevice() {
   await adb(['shell', 'svc', 'power', 'stayon', 'true']).catch(() => undefined);
   await adb(['shell', 'input', 'keyevent', 'WAKEUP']).catch(() => undefined);
   await adb(['shell', 'wm', 'dismiss-keyguard']).catch(() => undefined);
+  await adb(['shell', 'input', 'swipe', '540', '1800', '540', '400', '700']).catch(() => undefined);
   if (await isLocked()) {
     throw new Error('Android device is still locked. Unlock phone manually or change lockscreen policy.');
   }
