@@ -157,8 +157,6 @@ TypeScript
           -> Android
 ```
 
-Poderia ser Python? Sim.
-
 Qualquer linguagem com client WebDriver/Appium funciona:
 
 - Python;
@@ -170,7 +168,6 @@ Qualquer linguagem com client WebDriver/Appium funciona:
 
 Escolhemos TS porque:
 
-- você já conhece JS/TS;
 - testes Vitest ficam simples;
 - WebdriverIO é maduro;
 - regras puras ficam fáceis de testar;
