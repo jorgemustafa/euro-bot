@@ -89,6 +89,7 @@ ANDROID_UDID=192.168.0.50:5555
 
 ## Docs
 
+- [Comandos úteis](docs/comandos-uteis.md)
 - [Arquitetura](docs/arquitetura.md)
 - [Plano de ação](docs/plano-de-acao.md)
 - [Task Scheduler](docs/windows-task-scheduler.md)
