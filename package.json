@@ -9,6 +9,7 @@
     "bookings:sync": "tsx src/syncBookings.ts",
     "reminders:check": "tsx src/checkReminders.ts",
     "whatsapp:dev": "node --import tsx src/whatsappWeb.ts",
+    "whatsapp:stop": "powershell -ExecutionPolicy Bypass -File scripts/stop-whatsapp.ps1",
     "daily:win": "powershell -ExecutionPolicy Bypass -File scripts/run-daily.ps1",
     "daily:install-task": "powershell -ExecutionPolicy Bypass -File scripts/register-daily-task.ps1",
     "adb:devices": "adb devices -l",

@@ -19,6 +19,9 @@ const client = new Client({
   authStrategy: new LocalAuth({
     dataPath: process.env.WHATSAPP_SESSION_PATH || '.wwebjs_auth',
   }),
+  webVersionCache: {
+    type: 'none',
+  },
   puppeteer: {
     headless: true,
     executablePath: chromePath,
