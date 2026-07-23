@@ -45,7 +45,15 @@ WHATSAPP_SESSION_PATH=.wwebjs_auth
 WHATSAPP_CHROME_PATH=C:\Program Files\Google\Chrome\Application\chrome.exe
 ```
 
-Se `WHATSAPP_ALLOWED_SENDERS` ficar vazio, qualquer remetente será aceito. Para uso real, configure whitelist.
+`WHATSAPP_ALLOWED_SENDERS` é obrigatório. Se ficar vazio, o bot não inicia.
+
+Use somente números confiáveis. Exemplo:
+
+```env
+WHATSAPP_ALLOWED_SENDERS=5511999999999,5511888888888
+```
+
+O bot ignora grupos, status, mensagens próprias e mensagens antigas recebidas antes de iniciar.
 
 ## Fluxo atual
 

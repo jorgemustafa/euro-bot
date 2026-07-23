@@ -4,8 +4,8 @@ import { handleWhatsAppText, isAllowedSender, type PendingBooking } from '../src
 const courts = ['CAMPO SOCIETY', 'QUADRA AREIA 01', 'QUADRA AREIA 02'];
 
 describe('isAllowedSender', () => {
-  it('allows all senders when whitelist is empty', () => {
-    expect(isAllowedSender('5511999999999@c.us', [])).toBe(true);
+  it('blocks all senders when whitelist is empty', () => {
+    expect(isAllowedSender('5511999999999@c.us', [])).toBe(false);
   });
 
   it('allows only configured senders', () => {

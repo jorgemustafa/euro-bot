@@ -56,6 +56,7 @@ npm run whatsapp:dev
 ```
 
 Primeira execução mostra QR code para parear WhatsApp Web.
+Antes de rodar, configure `WHATSAPP_ALLOWED_SENDERS` no `.env`.
 
 ## Appium
 

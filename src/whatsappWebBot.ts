@@ -5,7 +5,7 @@ export type PendingBooking = Extract<BookingIntent, { intent: 'book' }>;
 export type BotReply = { text: string; pending?: PendingBooking | null };
 
 export function isAllowedSender(sender: string, allowedSenders: string[]) {
-  return allowedSenders.length === 0 || allowedSenders.some((allowed) => sender.includes(onlyDigits(allowed)));
+  return allowedSenders.length > 0 && allowedSenders.some((allowed) => sender.includes(onlyDigits(allowed)));
 }
 
 export function handleWhatsAppText(message: string, pending: PendingBooking | undefined, courts: string[]): BotReply {

@@ -9,6 +9,11 @@ const { Client, LocalAuth } = whatsappWeb;
 const allowedSenders = splitCsv(process.env.WHATSAPP_ALLOWED_SENDERS ?? '');
 const pendingBySender = new Map<string, PendingBooking>();
 const chromePath = process.env.WHATSAPP_CHROME_PATH || 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe';
+const startedAt = Math.floor(Date.now() / 1000);
+
+if (!allowedSenders.length) {
+  throw new Error('WHATSAPP_ALLOWED_SENDERS is required. Refusing to start without whitelist.');
+}
 
 const client = new Client({
   authStrategy: new LocalAuth({
@@ -44,6 +49,8 @@ client.on('disconnected', (reason) => {
 
 client.on('message', async (message) => {
   const sender = message.from;
+  if (message.fromMe || message.from.endsWith('@g.us') || message.from === 'status@broadcast') return;
+  if (message.timestamp < startedAt) return;
   if (!isAllowedSender(sender, allowedSenders)) return;
 
   const reply = handleWhatsAppText(message.body, pendingBySender.get(sender), config.booking.preferredCourts);
