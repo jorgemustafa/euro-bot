@@ -93,6 +93,7 @@ ANDROID_UDID=192.168.0.50:5555
 - [Arquitetura](docs/arquitetura.md)
 - [Plano de ação](docs/plano-de-acao.md)
 - [Task Scheduler](docs/windows-task-scheduler.md)
+- [WhatsApp Web MVP](docs/whatsapp-web-mvp.md)
 
 ## Referências
 
