@@ -4,4 +4,6 @@ dist
 .env
 outputs
 screenshots
+.wwebjs_auth*
+.wwebjs_cache
 *.log

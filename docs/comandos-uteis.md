@@ -47,6 +47,25 @@ npm run reminders:check
 
 Sem WhatsApp configurado, roda em modo `[DRY_RUN]`.
 
+## WhatsApp Web
+
+Rodar bot local:
+
+```powershell
+npm run whatsapp:dev
+```
+
+Primeira execução mostra QR code para parear WhatsApp Web.
+Antes de rodar, configure `WHATSAPP_ALLOWED_SENDERS` no `.env`.
+
+Parar Chrome travado do bot:
+
+```powershell
+npm run whatsapp:stop
+```
+
+Use se travar em `WhatsApp carregando: 99%`.
+
 ## Appium
 
 Subir servidor manualmente:

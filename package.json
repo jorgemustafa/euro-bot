@@ -8,18 +8,22 @@
     "book": "tsx src/book.ts",
     "bookings:sync": "tsx src/syncBookings.ts",
     "reminders:check": "tsx src/checkReminders.ts",
+    "whatsapp:dev": "node --import tsx src/whatsappWeb.ts",
+    "whatsapp:stop": "powershell -ExecutionPolicy Bypass -File scripts/stop-whatsapp.ps1",
     "daily:win": "powershell -ExecutionPolicy Bypass -File scripts/run-daily.ps1",
     "daily:install-task": "powershell -ExecutionPolicy Bypass -File scripts/register-daily-task.ps1",
     "adb:devices": "adb devices -l",
     "doctor:android": "appium driver doctor uiautomator2",
     "ui:dump": "adb shell uiautomator dump /sdcard/euroville-window.xml && adb pull /sdcard/euroville-window.xml outputs/euroville-window.xml",
-    "test": "vitest run",
+    "test": "vitest run --pool=forks --maxWorkers=1 --minWorkers=1",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "dotenv": "^16.6.1",
+    "qrcode-terminal": "^0.12.0",
     "tsx": "^4.20.3",
     "webdriverio": "^9.16.2",
+    "whatsapp-web.js": "^1.34.7",
     "zod": "^3.25.67"
   },
   "devDependencies": {
